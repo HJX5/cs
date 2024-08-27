@@ -8,6 +8,21 @@ The developers of this software are aware of its possible unethical applications
 
 Users of this software are expected to use this software responsibly while abiding by local laws. If the face of a real person is being used, users are required to get consent from the concerned person and clearly mention that it is a deepfake when posting content online. Developers of this software will not be responsible for actions of end-users.
 
+### Run using Docker:
+```
+# Build
+docker build -t deep-live-cam .
+
+# Run
+docker run --gpus all \
+      -v ./input:/app/input \
+      -v ./output:/app/output \
+      deep-live-cam \
+      -s input/face.jpg  # Source image for face swapping
+      -t input/video.mp4 # Target video to apply face swap
+      -o output          # Output directory for results
+```
+
 ## How do I install it?
 
 
